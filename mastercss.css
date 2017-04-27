@@ -7,8 +7,56 @@
 }
 
 body {
-  background-color: #333;
+  background: url("img/sunset.jpg") no-repeat center center fixed;
+  background-size:cover;
+  width: 100%;
+  height: 100%;
   color: white;
   font-family: 'Syncopate', sans-serif;
   font-weight:400;
+}
+
+.box{
+  position: relative;
+  background: white;
+  background-blend-mode: color-dodge;
+
+}
+
+
+/* Extra small devices (phones, up to 480px) */
+/*@media screen and (max-width: 767px) {
+  h2{
+    font-size: 6.9vw !important;
+
+  }
+  .box{
+    height: 400px;
+  }
+}*/
+/* Small devices (tablets, 768px and up) */
+@media screen and (max-width: 991px) {
+  h2{
+      font-size: 6.9vw;
+      margin-top: 10%;
+    }
+    .box{
+      height: 400px;
+    }
+}
+/* tablets/desktops and up ----------- */
+/*@media (min-width: 992px) and (max-width: 1199px) {
+    h2{
+    font-size: 2.9vw;
+  }
+}*/
+/* large desktops and up ----------- */
+@media screen and (min-width: 992px) {
+  h2{
+    font-size: 2.9vw;
+    margin-top: 10%;
+  }
+  .box{
+    height: 300px;
+  }
 }
