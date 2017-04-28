@@ -12,13 +12,13 @@ $(document).ready(function(){
 
     function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(locations);
+            navigator.geolocation.getCurrentPosition(processing);
         } else {
            console.log("Geolocation is not supported by this browser.");
         }
     }
 
-    function locations(loc){
+    function processing(loc){
             lat = loc.coords.latitude;
             long = loc.coords.longitude;
           url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&APPID=3602ffd43c9f394519c6b566a17005a1&units=metric';
