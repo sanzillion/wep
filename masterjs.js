@@ -146,7 +146,7 @@ $(document).ready(function(){
         $('#wicon').html(wi);
         $('#temp').text(metric.main.temp + " C");
         $('#place').text(metric.name + ", " + metric.sys.country);
-        $('#weathr').text(weather + ": " + metric.weather[0].description);
+        $('#weathr').text(metric.weather[0].description);
         $('#wind').text(metric.wind.speed + " knots");
     }
     
