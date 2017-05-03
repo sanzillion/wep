@@ -40,20 +40,43 @@ $(document).ready(function(){
           url2 = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&APPID=3602ffd43c9f394519c6b566a17005a1&units=imperial';
           
           if(url && url2){
-              data = $.getJSON(url, function(){ 
-                  metric = data.responseJSON;
-                  data2 = $.getJSON(url2, function(){
-                          imperial = data2.responseJSON;
-                          showData(data.responseJSON, data2.responseJSON);
+              $.ajax({
+                dataType: "jsonp",
+                type: 'GET',
+                url: url,
+                success: function(data){
+                  $.ajax({
+                    dataType: "jsonp",
+                    type: 'GET',
+                    url: url2,
+                    success: function(data2){
+                      metric = data;
+                      imperial = data2;
+                      showData(data, data2);
+                    },
+                    error: function(jqXHR, textStatus, error){
+                      alert("error: "+ jqXHR.responseText);
+                    }
                   });
+                },
+                error: function(jqXHR, textStatus, error){
+                  alert("error: "+ jqXHR.responseText);
+                }
+              });
+              // data = $.getJSON(url, function(){ 
+              //     metric = data.responseJSON;
+              //     data2 = $.getJSON(url2, function(){
+              //             imperial = data2.responseJSON;
+              //             showData(data.responseJSON, data2.responseJSON);
+              //     });
 
-                  data2.fail(function() {
-                      console.log( "error" );
-                    });
-              });     
-                    data.fail(function() {
-                      console.log( "error" );
-                    });
+              //     data2.fail(function() {
+              //         console.log( "error" );
+              //       });
+              // });     
+              //       data.fail(function() {
+              //         console.log( "error" );
+              //       });
             }
     }
 
