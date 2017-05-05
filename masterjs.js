@@ -1,9 +1,12 @@
 
+//openweathermap API
+// working locally but not on HTTPS site since the api serves json on HTTP
+
 var shit = "https://codepen.io/joshbader/pen/EjXgqr?editors=0100";
 var test = "https://openweathermap.org/weather-conditions";
 
 var lat;
-var long;
+var longi;
 var url;
 var data;
 var data2;
@@ -55,12 +58,12 @@ $(document).ready(function(){
                       showData(data, data2);
                     },
                     error: function(jqXHR, textStatus, error){
-                      alert("error: "+ jqXHR.responseText);
+                      alert("error retrieving data!");
                     }
                   });
                 },
                 error: function(jqXHR, textStatus, error){
-                  alert("error: "+ jqXHR.responseText);
+                  alert("error retrieving data!");
                 }
               });
               // data = $.getJSON(url, function(){ 
