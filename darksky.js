@@ -145,7 +145,7 @@ $(document).ready(function(){
         $('#wicon').html(wi);
         $('#temp').text(metric + " C");
         $('#place').text(timezone);
-        $('#weathr').text(weather.description);
+        $('#weathr').text(weather);
         $('#wind').text(windspeed + " knots");
         $('#summary').text(summary);
     }
