@@ -131,7 +131,7 @@ $(document).ready(function(){
           case "thunderstorm":
             wi = wicon.thunderstorm;
             break;
-          case "snow": case: "sleet" case: "wind"
+          case "snow": case "sleet": case "wind":
             wi = wicon.flurries;
             break;
           default:
