@@ -114,14 +114,11 @@ $(document).ready(function(){
           body.css('background-size','cover');
 
         switch(weather){
-          case "clear sky": 
+          case "clear-day": 
             wi = wicon.sunny;
             break;
-          case "few clouds": case "scattered clouds": case "broken clouds":
+          case "cloudy": case "partly-cloudy-day":
             wi = wicon.cloudy;
-            break;
-          case "shower rain":
-            wi = wicon.rainy;
             break;
           case "rain":
             if(time == "day"){
@@ -134,7 +131,7 @@ $(document).ready(function(){
           case "thunderstorm":
             wi = wicon.thunderstorm;
             break;
-          case "snow":
+          case "snow": case: "sleet" case: "wind"
             wi = wicon.flurries;
             break;
           default:
