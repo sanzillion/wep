@@ -87,24 +87,25 @@ $(document).ready(function(){
             rain: 'rain.jpg'
           }
         };
-
+        console.log(time);
         if(time == "day"){
-          if(weather !== "rain" || weather !== "shower rain" || weather !== "thunderstorm"){
-            index = Math.floor(Math.random() * images.day.normal.length);
-            img = images.day.normal[index];
+          console.log(weather);
+          if(weather == "rain" || weather == "thunderstorm"){
+            img = images.day.rain;
           }
           else{
-            img = images.day.rain;
+            index = Math.floor(Math.random() * images.day.normal.length);
+            img = images.day.normal[index];
           }
           
         }
         else{
-          if(weather !== "rain" || weather !== "shower rain" || weather !== "thunderstorm"){
-            index = Math.floor(Math.random() * images.night.normal.length);
-            img = images.night.normal[index];
+          if(weather == "rain" || weather == "thunderstorm"){
+            img = images.night.rain;
           }
           else{
-            img = images.night.rain;
+            index = Math.floor(Math.random() * images.night.normal.length);
+            img = images.night.normal[index];
           }
           
         }
